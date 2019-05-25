@@ -23,7 +23,7 @@ class ConcertHallEvent(database.Model):
     event_name = database.Column(database.String(100), unique=True)
     musicians_count = database.Column(database.Integer)
     event_duration = database.Column(database.Integer)
-    ticket_price = database.Column(database.Float)
+    ticket_price = database.Column(database.Integer)
 
     def __init__(self, event_name, musicians_count,
                  event_duration, ticket_price):
@@ -65,7 +65,7 @@ def add_event():
     database.session.add(new_event)
     database.session.commit()
 
-    return jsonify(new_event)
+    return event_schema.jsonify(new_event)
 
 
 # Get all events
