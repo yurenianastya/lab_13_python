@@ -33,7 +33,7 @@ class ConcertHallEvent(database.Model):
         self.ticket_price = ticket_price
 
 
-# Product Schema
+# Event Schema
 class EventSchema(marshmallow.Schema):
     class Meta:
         fields = ('id', 'event_name', 'musicians_count', 'event_duration',
